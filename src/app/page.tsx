@@ -173,7 +173,7 @@ const Home: React.FC = () => {
 
         <section className="flex flex-col justify-center items-center mt-[30rem] bg-[#912828] rounded-[1.5rem] p-8 mx-10 text-center mb-[12rem]">
           <h2 className="text-[64px] font-[500] text-[#FFCECE] mb-4 px-[10rem]">
-            Don't be surprised at how satisfied your tummy is once you
+            Don&apos;t be surprised at how satisfied your tummy is once you
             kantonize.
           </h2>
           <button className="bg-[#FFCECE] hover:bg-gray-100 text-[#470F0F] font-bold py-[0.5rem] text-[20px] px-[5rem] rounded-3xl mt-4 tracking-wider">
