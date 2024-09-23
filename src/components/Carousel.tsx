@@ -20,7 +20,7 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
   };
 
   return (
-    <div className="relative w-full mx-auto overflow-hidden">
+    <div className="relative w-full mx-auto overflow-hidden max-w-7xl px-4">
       <div
         className="flex transition-transform duration-500 ease-in-out"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -28,47 +28,47 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
         {items.map((item, index) => (
           <div
             key={index}
-            className={`min-w-full transition-opacity duration-500 ${
-              index === currentIndex ? "opacity-100" : "opacity-0"
-            }`}
+            className="min-w-full flex justify-center items-center transition-opacity duration-500"
           >
-            <div className="w-full flex justify-center items-center">
-              <div className="w-[70rem] bg-white rounded-3xl p-8 shadow-lg shadow-black/25 border border-gray-200 relative text-center">
-                <p className="text-[120px] font-black -start-96 relative">
-                  &quot;
+            <div className="w-full max-w-[70rem] bg-white rounded-3xl p-8 shadow-lg border border-gray-200 text-center">
+              {/* Quote */}
+              <div className="relative text-6xl font-black text-gray-300">
+                <span className="absolute left-0 top-[-3rem]">&quot;</span>
+                <p className="text-gray-600 italic text-lg md:text-xl">
+                  {item.description}
                 </p>
-                <p className="text-gray-600  italic">{item.description}</p>
-                <p className="Milker text-[120px] font-black mt-6 -end-96 relative">
-                  &quot;
-                </p>
-                <div className="flex flex-col items-center">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    width={120}
-                    height={120}
-                    className="rounded-full mr-4"
-                  />
-                  <div>
-                    <h3 className="text-lg font-black text-[1.75rem] tracking-wider text-gray-800 mb-1">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-600 font-medium">{item.job}</p>
-                  </div>
-                </div>
+                <span className="absolute right-0 bottom-[-3rem]">&quot;</span>
+              </div>
+
+              {/* Image and Info */}
+              <div className="mt-8 flex flex-col items-center">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  width={120}
+                  height={120}
+                  className="rounded-full"
+                />
+                <h3 className="mt-4 text-2xl font-black tracking-wide text-gray-800">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 text-lg">{item.job}</p>
               </div>
             </div>
           </div>
         ))}
       </div>
-      <div className="flex justify-center mt-4">
+
+      {/* Navigation Dots */}
+      <div className="flex justify-center mt-6 space-x-2">
         {items.map((_, index) => (
           <div
             key={index}
-            className={`w-3 h-3 rounded-full mx-1 cursor-pointer ${
-              index === currentIndex ? "bg-black" : "bg-gray-300"
+            className={`w-4 h-4 rounded-full cursor-pointer transition-all ${
+              index === currentIndex ? "bg-black scale-110" : "bg-gray-300"
             }`}
             onClick={() => goToSlide(index)}
+            aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
