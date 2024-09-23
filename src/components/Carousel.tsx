@@ -44,10 +44,12 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
           >
             <div className="w-full flex justify-center items-center">
               <div className="w-[70rem] bg-white rounded-3xl p-8 shadow-lg shadow-black/25 border border-gray-200 relative text-center">
-                <p className="text-[120px] font-black -start-96 relative">"</p>
+                <p className="text-[120px] font-black -start-96 relative">
+                  &quot;
+                </p>
                 <p className="text-gray-600  italic">{item.description}</p>
                 <p className="Milker text-[120px] font-black mt-6 -end-96 relative">
-                  "
+                  &quot;
                 </p>
                 <div className="flex flex-col items-center">
                   <Image
