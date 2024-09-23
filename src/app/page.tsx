@@ -139,10 +139,10 @@ const Home: React.FC = () => {
                 traditional Filipino stir-fried noodles. Made with fresh egg
                 noodles, a blend of savory sauces, and loaded with tender meats,
                 seafood, and crisp vegetables, each bite is bursting with
-                flavor. Whether it's our classic Espesyal Canton with pork and
-                shrimp or a spicy version with chili and garlic, these dishes
-                are sure to satisfy your cravings for hearty, Filipino comfort
-                food. Perfect for any occasion, served fresh and hot!
+                flavor. Whether it&apos;s our classic Espesyal Canton with pork
+                and shrimp or a spicy version with chili and garlic, these
+                dishes are sure to satisfy your cravings for hearty, Filipino
+                comfort food. Perfect for any occasion, served fresh and hot!
               </p>
             </div>
           </div>
