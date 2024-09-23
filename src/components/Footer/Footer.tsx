@@ -1,30 +1,36 @@
 import Image from "next/image";
+
 const Footer = () => {
   return (
-    <footer className="py-12">
-      <div className="container mx-[4rem]">
-        <div className="flex justify-between md:flex-row flex-col">
-          <div className="font-medium text-gray-900 w-[30%]">
-            <div className="flex items-center align-middle">
+    <footer className="py-12 bg-gray-100">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-wrap justify-between md:flex-row flex-col">
+          {/* Left Section */}
+          <div className="font-medium text-gray-900 md:w-[30%] w-full mb-8 md:mb-0">
+            <div className="flex items-center">
               <Image
                 src="/favicon.ico"
                 alt="Kantonize"
-                width={100}
-                height={100}
+                width={50}
+                height={50}
                 className="mb-2"
               />
-              <div className="Kenarose">
-                <p className="ml-9 font-black text-[30px] ">Kantonize</p>
+              <div className="ml-4">
+                <p className="font-black text-2xl">Kantonize</p>
               </div>
             </div>
-            <p className="tracking-wider text-[24px] text-[#470F0F]">
-              a website with unique features and customizing prowess. Based in
-              Iloilo, Philippines
+            <p className="tracking-wider text-lg text-[#470F0F] mt-4">
+              A website with unique features and customizing prowess. Based in
+              Iloilo, Philippines.
             </p>
-            <p>kantonize@gmail.com</p>
-            <p>© 2024 Kantonizers - All Right Reserved</p>
+            <p className="mt-2">kantonize@gmail.com</p>
+            <p className="mt-1 text-sm text-gray-600">
+              © 2024 Kantonizers - All Rights Reserved
+            </p>
           </div>
-          <div className=" font-medium md:mt-28 mt-4">
+
+          {/* Navigation Section */}
+          <div className="font-medium w-full md:w-auto mb-8 md:mb-0">
             <h3 className="font-extrabold mb-2 text-gray-800">NAVIGATION</h3>
             <ul>
               <li className="mt-3">
@@ -49,7 +55,9 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="font-medium md:mt-28 mt-4">
+
+          {/* Socials Section */}
+          <div className="font-medium w-full md:w-auto mb-8 md:mb-0">
             <h3 className="font-extrabold mb-2 text-gray-800">SOCIALS</h3>
             <ul>
               <li className="mt-3">
@@ -74,12 +82,14 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="font-medium font- md:mt-28 mt-4">
+
+          {/* Company Section */}
+          <div className="font-medium w-full md:w-auto">
             <h3 className="font-extrabold mb-2 text-gray-800">COMPANY</h3>
             <ul>
               <li className="mt-3">
                 <a href="/" className="text-gray-600 hover:text-[#912828]">
-                  Terms Condition
+                  Terms & Conditions
                 </a>
               </li>
               <li className="mt-3">
