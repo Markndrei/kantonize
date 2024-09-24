@@ -49,10 +49,10 @@ const Home: React.FC = () => {
               CUSTOMIZE YOUR PANCIT CANTON
             </h2>
             <h1 className="text-6xl font-bold text-gray-800 mb-4">
-              HERE AT ΚΑΝΤΟΝΙΖZE, FIND THE MIX THAT MAKES YOU HAPPY
+              HERE AT ΚΑΝΤΟΝΙΖE, FIND THE MIX THAT MAKES YOU HAPPY
             </h1>
             <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-              ΚΑΝΤΟΝΙΖZE NOW -&gt;
+              ΚΑΝΤΟΝΙΖE NOW -&gt;
             </button>
           </div>
           <div className="md:w-1/2 mt-8 md:mt-0">
@@ -162,7 +162,7 @@ const Home: React.FC = () => {
             TESTIMONIALS{" "}
           </p>
           <div className="flex flex-col items-center mx-4">
-            <h2 className="text-[5.5rem] font-[900] text-gray-800 mb-4 mx-6">
+            <h2 className="text-[5.5rem] font-[900] text-gray-800 mb-4 mx-6 text-center">
               WHAT DO KANTONIZERS SAY ABOUT US.
             </h2>
             <div>

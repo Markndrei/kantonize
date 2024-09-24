@@ -65,7 +65,7 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
           <div
             key={index}
             className={`w-4 h-4 rounded-full cursor-pointer transition-all ${
-              index === currentIndex ? "bg-black scale-110" : "bg-gray-300"
+              index === currentIndex ? "bg-[#470F0F] scale-110" : "bg-gray-300"
             }`}
             onClick={() => goToSlide(index)}
             aria-label={`Go to slide ${index + 1}`}
