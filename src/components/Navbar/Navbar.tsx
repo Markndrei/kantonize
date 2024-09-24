@@ -63,7 +63,7 @@ const Navbar = () => {
               </Avatar>
             </div>
           </DropdownMenuTrigger>
-          <DropdownMenuContent>
+          <DropdownMenuContent className="w-56">
             <DropdownMenuGroup>
               <DropdownMenuItem>
                 <span>Logout</span>
