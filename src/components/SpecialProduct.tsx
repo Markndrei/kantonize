@@ -6,16 +6,16 @@ interface SpecialProduct {
 const SpecialProduct = ({ name, price }: SpecialProduct) => {
   return (
     <div
-      className="bg-[#912828] p-6 relative shadow-md w-[25rem]"
+      className="bg-[#9b3737] p-6 relative shadow-md w-[25rem]"
       style={{ borderRadius: "40px 0px 40px 0px" }}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Image Section */}
         <div className="w-10 h-20 rounded-lg mb-4">
           <img
-            src="/assets/main-asset.png"
+            src="/assets/bowl_blend.png"
             alt="asset"
-            className="absolute -top-11 w-[150px] h-[150px] z-10"
+            className="absolute -top-16 w-[170px] h-[170px] z-10"
           />
         </div>
 
@@ -66,7 +66,7 @@ const SpecialProduct = ({ name, price }: SpecialProduct) => {
 export default function ProductList() {
   return (
     <div>
-      <SpecialProduct name="Pancit Canton Espesyal" price="80.00" />
+      <SpecialProduct name="Noypi Savor Blend Bowl" price="90.00" />
     </div>
   );
 }

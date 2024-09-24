@@ -71,15 +71,15 @@ const Home: React.FC = () => {
               style={{ transform: "translateX(10.5rem) translateY(-4.5rem)" }}
             >
               <div
-                className="bg-[#912828] rounded-full w-[50rem] h-[50rem] absolute z-0"
+                className="bg-[#9b3737] rounded-full w-[50rem] h-[50rem] absolute z-0"
                 style={{ top: "-15rem", left: "-12rem" }}
               ></div>
 
               <Image
-                src="/assets/main-asset.png"
+                src="/assets/bowl_blend.png"
                 alt="Pancit Canton"
                 width={400}
-                height={300}
+                height={400}
                 className="relative z-10"
               />
             </div>
