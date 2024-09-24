@@ -58,7 +58,10 @@ const config: Config = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+		  boxShadow: {
+			'custom-bottom': '0 8px 5px -4px rgba(0, 0, 0, 0.4)',
+		  },
   	}
   },
   plugins: [require("tailwindcss-animate"),("daisyui")],
