@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="py-12 bg-pink-50">
+    <footer className="py-12 bg-pink-50 px-4">
       <div className="container mx-auto">
         <div className="flex flex-wrap justify-between md:flex-row flex-col">
           {/* Left Section */}
