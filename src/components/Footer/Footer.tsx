@@ -2,8 +2,8 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="py-12 bg-red-200">
-      <div className="container mx-auto px-4">
+    <footer className="py-12 bg-pink-50">
+      <div className="container mx-auto">
         <div className="flex flex-wrap justify-between md:flex-row flex-col">
           {/* Left Section */}
           <div className="font-medium text-gray-900 md:w-[30%] w-full mb-8 md:mb-0">
