@@ -11,12 +11,17 @@ const Footer = () => {
               <Image
                 src="/favicon.ico"
                 alt="Kantonize"
-                width={50}
-                height={50}
-                className="mb-2"
+                width={80}
+                height={80}
+                className="my-2"
               />
               <div className="ml-4">
-                <p className="font-black text-2xl">Kantonize</p>
+                <p
+                  className="text-3xl font-medium text-[#912828] px-2 border-l-2 md:border-l-0 tracking-widest"
+                  style={{ fontFamily: "Kenarose" }}
+                >
+                  Kantonize
+                </p>
               </div>
             </div>
             <p className="tracking-wider text-lg text-[#470F0F] mt-4">
