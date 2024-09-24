@@ -126,9 +126,9 @@ const Home: React.FC = () => {
             </div>
           </div>
         </section>
-        <section className="mt-[12rem] mx-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <section className="mt-[12rem] mx-11">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
               <ProductCard />
               <ProductCard />
             </div>
