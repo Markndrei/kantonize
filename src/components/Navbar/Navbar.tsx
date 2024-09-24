@@ -1,5 +1,13 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { DropdownMenu, DropdownMenuTrigger } from "../ui/dropdown-menu";
+import {
+  DropdownMenu,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "../ui/dropdown-menu";
+import {
+  DropdownMenuContent,
+  DropdownMenuGroup,
+} from "@radix-ui/react-dropdown-menu";
 
 const Navbar = () => {
   return (
@@ -55,6 +63,13 @@ const Navbar = () => {
               </Avatar>
             </div>
           </DropdownMenuTrigger>
+          <DropdownMenuContent>
+            <DropdownMenuGroup>
+              <DropdownMenuItem>
+                <span>Logout</span>
+              </DropdownMenuItem>
+            </DropdownMenuGroup>
+          </DropdownMenuContent>
         </DropdownMenu>
       </nav>
     </header>
