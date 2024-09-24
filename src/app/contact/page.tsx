@@ -39,7 +39,6 @@ export default function ContactUsPage() {
       </div>
 
       <div className="flex flex-col md:flex-row gap-20 h-auto relative my-28 ">
-        {/* First Grid Item (60% width) */}
         <div className="flex flex-col w-full md:w-[60%] px-20">
           <div className="flex flex-col md:flex-row gap-4 mb-8">
             <div className="w-full max-w-sm">
@@ -83,7 +82,7 @@ export default function ContactUsPage() {
             <Textarea
               placeholder="Type your message here."
               id="message"
-              className="h-14"
+              className="h-16"
               style={{ boxShadow: "inset 0 4px 6px rgba(0, 0, 0, 0.1)" }}
             />
           </div>
@@ -94,7 +93,6 @@ export default function ContactUsPage() {
           </div>
         </div>
 
-        {/* Second Grid Item (40% width) */}
         <div className="flex flex-col relative w-full md:w-[40%] pr-20">
           <LeafletMap />
           <div className="py-2">
