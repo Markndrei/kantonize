@@ -30,18 +30,18 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
             key={index}
             className="min-w-full flex justify-center items-center transition-opacity duration-500"
           >
-            <div className="w-full max-w-[70rem] bg-white rounded-3xl p-8 shadow-lg border border-gray-200 text-center">
+            <div className="w-full max-w-[70rem] h-[40rem] bg-white rounded-3xl p-8 shadow-lg border border-gray-200 text-center">
               {/* Quote */}
-              <div className="relative text-6xl font-black text-gray-300">
-                <span className="absolute left-0 top-[-3rem]">&quot;</span>
-                <p className="text-gray-600 italic text-lg md:text-xl">
+              <div className="relative text-6xl pt-40 font-black text-gray-800">
+                <span className="absolute left-0 top-28">&quot;</span>
+                <p className="text-gray-600 italic font-extralight text-lg md:text-xl">
                   {item.description}
                 </p>
-                <span className="absolute right-0 bottom-[-3rem]">&quot;</span>
+                <span className="absolute right-0 bottom-[-6rem]">&quot;</span>
               </div>
 
               {/* Image and Info */}
-              <div className="mt-8 flex flex-col items-center">
+              <div className="mt-32 flex flex-col items-center">
                 <Image
                   src={item.image}
                   alt={item.title}
