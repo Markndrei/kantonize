@@ -39,18 +39,24 @@ const Footer = () => {
                 </a>
               </li>
               <li className="mt-3">
-                <a href="/" className="text-gray-600 hover:text-[#912828]">
-                  Ingredients
+                <a
+                  href="/kantonize"
+                  className="text-gray-600 hover:text-[#912828]"
+                >
+                  Kantonize
                 </a>
               </li>
               <li className="mt-3">
-                <a href="/" className="text-gray-600 hover:text-[#912828]">
-                  Online Forum
-                </a>
-              </li>
-              <li className="mt-3">
-                <a href="/" className="text-gray-600 hover:text-[#912828]">
+                <a href="/about" className="text-gray-600 hover:text-[#912828]">
                   About Us
+                </a>
+              </li>
+              <li className="mt-3">
+                <a
+                  href="/contact"
+                  className="text-gray-600 hover:text-[#912828]"
+                >
+                  Contact Us
                 </a>
               </li>
             </ul>
