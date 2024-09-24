@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import Carousel from "@/components/Carousel";
 import ProductCard from "@/components/ProductCard";
+import SpecialProduct from "@/components/SpecialProduct";
 
 const Home: React.FC = () => {
   const items = [
@@ -20,7 +21,7 @@ const Home: React.FC = () => {
       job: "Iniwang Kaibigan na di na minahal",
     },
     {
-      image: "",
+      image: "/assets/bhela.png",
       title: "Bhela Thangherl",
       description:
         "Loh, Sinaasabi ko sa inyo, go na here. It's like the best cuz I get to make kaen the way I want it",
@@ -42,29 +43,57 @@ const Home: React.FC = () => {
   ];
   return (
     <div className="container max-w-max">
-      <main className="mt-12">
-        <section className="flex flex-col md:flex-row items-center">
-          <div className="md:w-1/2">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              CUSTOMIZE YOUR PANCIT CANTON
-            </h2>
-            <h1 className="text-6xl font-bold text-gray-800 mb-4">
-              HERE AT ΚΑΝΤΟΝΙΖE, FIND THE MIX THAT MAKES YOU HAPPY
-            </h1>
-            <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-              ΚΑΝΤΟΝΙΖE NOW -&gt;
-            </button>
-          </div>
-          <div className="md:w-1/2 mt-8 md:mt-0">
-            <Image
-              src="/pancit.jpg"
-              alt="Pancit Canton"
-              width={500}
-              height={300}
-              className="rounded-lg"
-            />
-          </div>
-        </section>
+      <main className="mt-5">
+        <div className="overflow-x-hidden">
+          <section
+            className="flex flex-col md:flex-row gap-20 items-center bg-[#FFCECE] mx-8 px-20 tracking-wider overflow-hidden"
+            style={{ borderRadius: "20px 120px 20px 120px" }}
+          >
+            <div className="md:w-1/2 pt-36">
+              <h2 className="text-sm font-light text-gray-800 mb-4">
+                CUSTOMIZE YOUR PANCIT CANTON
+              </h2>
+              <h1 className="text-5xl font-black text-[#470F0F] mb-4">
+                HERE AT KANTONIZE, FIND THE MIX THAT MAKES YOU HAPPY
+              </h1>
+              <button
+                className="bg-[#912828] hover:bg-[#470F0F] text-white font-semibold py-2 px-4 rounded"
+                style={{ borderRadius: "1rem 0rem 1rem 0rem" }}
+              >
+                KANTONIZE NOW -&gt;
+              </button>
+              <div className="py-16 px-20">
+                <SpecialProduct />
+              </div>
+            </div>
+            <div
+              className="md:w-1/2 mt-8 md:mt-0 relative"
+              style={{ transform: "translateX(10.5rem) translateY(-4.5rem)" }}
+            >
+              <div
+                className="bg-[#912828] rounded-full w-[50rem] h-[50rem] absolute z-0"
+                style={{ top: "-15rem", left: "-12rem" }}
+              ></div>
+
+              <Image
+                src="/assets/main-asset.png"
+                alt="Pancit Canton"
+                width={400}
+                height={300}
+                className="relative z-10"
+              />
+            </div>
+            <div className="absolute" style={{ top: "32rem", left: "38rem" }}>
+              <Image
+                src="/assets/main-line.png"
+                alt="Pancit Canton"
+                width={550}
+                height={400}
+                className="relative z-0"
+              />{" "}
+            </div>
+          </section>
+        </div>
 
         <section className="mt-12 mx-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-9">

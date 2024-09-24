@@ -94,9 +94,9 @@ export default function AboutPage() {
           </div>
           <div className="bg-[#912828] w-full max-w-lg aspect-[4/3]"></div>
           <img
-            src="/assets/CHAPIC.png"
+            src="/assets/JEPHPIC.png"
             alt="Person 2"
-            className="absolute bottom-[11.25rem] w-[240x] h-[520PX] z-10"
+            className="absolute bottom-[11.25rem] w-[460px] h-[620px] z-10"
           />
           <div className="text-center mb-32">
             <h2 className="text-black text-xl font-bold">
