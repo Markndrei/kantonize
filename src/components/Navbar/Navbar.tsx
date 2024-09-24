@@ -15,7 +15,7 @@ const Navbar = () => {
     <header className="py-4 mx-[4rem]">
       <nav className="flex justify-between items-center">
         <h1 className="text-2xl font-bold text-gray-800">KANTONIZE</h1>
-        <ul className="flex justify-center items-center space-x-24">
+        <ul className="flex justify-center items-center space-x-20">
           <li>
             <a
               href="/"
@@ -64,13 +64,13 @@ const Navbar = () => {
               </Avatar>
             </div>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-56 bg-white rounded-lg">
+          <DropdownMenuContent className="w-40 bg-slate-100 rounded-lg">
             <DropdownMenuGroup>
               <DropdownMenuItem>
                 <span>Cart</span>
               </DropdownMenuItem>
             </DropdownMenuGroup>
-            <DropdownMenuSeparator></DropdownMenuSeparator>
+            <DropdownMenuSeparator className="w-40 bg-slate-800"></DropdownMenuSeparator>
             <DropdownMenuGroup>
               <DropdownMenuItem>
                 <span>Logout</span>
