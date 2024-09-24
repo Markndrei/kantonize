@@ -1,13 +1,11 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { DropdownMenu, DropdownMenuTrigger } from "../ui/dropdown-menu";
 
 const Navbar = () => {
   return (
     <header className="py-4 mx-[4rem]">
       <nav className="flex justify-between items-center">
-        {/* Left: Brand (KANTONIZE) */}
         <h1 className="text-2xl font-bold text-gray-800">KANTONIZE</h1>
-
-        {/* Center: Navigation Links */}
         <ul className="flex justify-center items-center space-x-24">
           <li>
             <a
@@ -48,12 +46,16 @@ const Navbar = () => {
         </ul>
 
         {/* Right: Avatar */}
-        <div className="flex items-center">
-          <Avatar>
-            <AvatarImage src="/assets/image.jpg" />
-            <AvatarFallback>CN</AvatarFallback>
-          </Avatar>
-        </div>
+        <DropdownMenu>
+          <DropdownMenuTrigger>
+            <div className="flex items-center">
+              <Avatar>
+                <AvatarImage src="/assets/image.jpg" />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+            </div>
+          </DropdownMenuTrigger>
+        </DropdownMenu>
       </nav>
     </header>
   );
