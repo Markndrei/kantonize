@@ -28,16 +28,15 @@ const Home: React.FC = () => {
       job: "Bijj Ghurlie",
     },
     {
-      image: "/another-icon.png",
+      image: "/assets/images-anony.jpg",
       title: "Anonymous",
-      description: "...",
+      description: "good.",
       job: "Mysterious Guy na may secret",
     },
     {
       image: "/assets/image.webp",
       title: "CICTSC",
-      description:
-        "Hala, bih. This is so like the best website I've been to. Ang galing ng mga developers",
+      description: "haha xD alang panghosting.",
       job: "Oa mong Friend",
     },
   ];
