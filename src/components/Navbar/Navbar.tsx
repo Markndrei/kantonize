@@ -2,6 +2,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuItem,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 import {
@@ -64,6 +65,12 @@ const Navbar = () => {
             </div>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-56 bg-white">
+            <DropdownMenuGroup>
+              <DropdownMenuItem>
+                <span>Cart</span>
+              </DropdownMenuItem>
+            </DropdownMenuGroup>
+            <DropdownMenuSeparator></DropdownMenuSeparator>
             <DropdownMenuGroup>
               <DropdownMenuItem>
                 <span>Logout</span>
