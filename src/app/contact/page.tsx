@@ -87,7 +87,10 @@ export default function ContactUsPage() {
             />
           </div>
           <div>
-            <Button className="w-full mb-4 font-bold tracking-widest bg-[#912828] border-black">
+            <Button
+              type="submit"
+              className="w-full mb-4 font-bold tracking-widest bg-[#912828] border-black"
+            >
               SEND MESSAGE
             </Button>
           </div>
