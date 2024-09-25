@@ -44,9 +44,9 @@ export default function AboutPage() {
           </div>
           <div className="bg-[#912828] w-full max-w-lg aspect-[4/3]"></div>
           <img
-            src="/assets/MARKPIC.png"
+            src="/assets/KJPIC.png"
             alt="Person 1"
-            className="absolute top-[33rem] w-[240x] h-[420PX] z-10"
+            className="absolute top-[26.6rem] w-[360px] h-[520px] z-10"
           />
           <div className="text-center mb-32">
             <h2 className="text-black text-xl font-bold">Khee Jay Galvez</h2>
@@ -54,9 +54,9 @@ export default function AboutPage() {
           </div>
           <div className="bg-[#912828] w-full max-w-lg aspect-[4/3]"></div>
           <img
-            src="/assets/MARKPIC.png"
+            src="/assets/CHEPIC.png"
             alt="Person 1"
-            className="absolute bottom-[11.25rem] w-[240x] h-[423px] z-10"
+            className="absolute bottom-[11.25rem] w-[340px] h-[520px] z-10"
           />
           <div className="text-center mb-32">
             <h2 className="text-black text-xl font-bold">
@@ -82,9 +82,9 @@ export default function AboutPage() {
           </div>
           <div className="bg-[#912828] w-full max-w-lg aspect-[4/3]"></div>
           <img
-            src="/assets/CHAPIC.png"
+            src="/assets/ALLANPIC.png"
             alt="Person 2"
-            className="absolute top-[26.75rem] w-[240x] h-[520PX] z-10"
+            className="absolute top-[24.2rem] w-[340px] h-[560PX] z-10"
           />
           <div className="text-center mb-32">
             <h2 className="text-black text-xl font-bold">
