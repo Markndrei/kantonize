@@ -1,16 +1,6 @@
 "use client";
+import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-  DropdownMenu,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
-import {
-  DropdownMenuContent,
-  DropdownMenuGroup,
-} from "@radix-ui/react-dropdown-menu";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -18,6 +8,7 @@ import { useState } from "react";
 const Navbar = () => {
   const pathname = usePathname();
   const [openNavBar, setOpenNavBar] = useState(false);
+
   return (
     <header className="w-full px-4 md:px-[4rem] shadow-custom-bottom">
       <div className="py-4 flex items-center justify-between gap-1 w-full">
@@ -65,8 +56,7 @@ const Navbar = () => {
               <li>
                 <a
                   href="/kantonize"
-                  className={`relative text-gray-600 hover:text-[#912828] transition-colors duration-300"
-									${
+                  className={`relative text-gray-600 hover:text-[#912828] transition-colors duration-300 ${
                     pathname === "/kantonize"
                       ? "underline decoration-4 underline-offset-8 text-red-800"
                       : ""
@@ -106,32 +96,24 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          {/* <div className="text-xl">avatar</div> */}
-          {/* Right: Avatar */}
           <div className="flex justify-end w-2/12">
-            <DropdownMenu>
-              <DropdownMenuTrigger>
-                <div className="flex items-center">
-                  <Avatar>
-                    <AvatarImage src="/assets/image.jpg" />
-                    <AvatarFallback>CN</AvatarFallback>
-                  </Avatar>
-                </div>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-40 bg-slate-100 rounded-lg">
-                <DropdownMenuGroup>
-                  <DropdownMenuItem>
-                    <span>Cart</span>
-                  </DropdownMenuItem>
-                </DropdownMenuGroup>
-                <DropdownMenuSeparator className="w-40 bg-slate-800"></DropdownMenuSeparator>
-                <DropdownMenuGroup>
-                  <DropdownMenuItem>
-                    <span>Logout</span>
-                  </DropdownMenuItem>
-                </DropdownMenuGroup>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <SignedOut>
+              <div
+                className="border-opacity-100 border bg-[#912828] py-3 px-6 text-white font-bold tracking-wider"
+                style={{ borderRadius: "1rem 0.25rem 1rem 0.25rem" }}
+              >
+                <SignInButton />
+              </div>
+            </SignedOut>
+            <SignedIn>
+              <UserButton
+                appearance={{
+                  elements: {
+                    userButtonAvatarBox: "w-10 h-10",
+                  },
+                }}
+              />
+            </SignedIn>
           </div>
         </nav>
       </div>

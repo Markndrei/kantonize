@@ -13,7 +13,7 @@ const Footer = () => {
                 alt="Kantonize"
                 width={80}
                 height={80}
-                className="my-2"
+                className="my-2 z-0"
               />
               <div className="ml-4">
                 <p
