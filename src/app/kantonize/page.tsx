@@ -265,19 +265,24 @@ const KantonizePage = () => {
                 className="w-[50rem] absolute top-1/2 -translate-y-1/2"
               />
             )}
+            {/* choose your sauce, if current === 2 ? to choose your meat, and so on....*/}
             {current === 1 && (
               <div>
                 <img
                   src="/assets/kantonize/bowl/BOWL_original.png"
                   alt="bowl_image"
                   className={`transition-all duration-500 ease-in-out ${
+                    // if ang addOns variable holder = (image itself) this case (original), position sa center intial gamit ko absolute
                     selectedAddOns === "Original"
                       ? "w-[50rem] absolute top-1/2 -translate-y-1/2"
+                    // then if and holder na is = next image naman(gourmet), gin decreased ko and size to 20 rem and put it sa babaw
                       : selectedAddOns === "Gourmet"
                       ? "w-[20rem] absolute -top-[10rem]"
+                    // then disappear if next image = next next image(savor blend), since this position will be taken over by gourmet
                       : "hidden"
                   }`}
                 />
+                {/* same applies here and sa iban */}
                 <img
                   src="/assets/kantonize/bowl/BOWL_gourmet.png"
                   alt="bowl_image"
@@ -300,6 +305,13 @@ const KantonizePage = () => {
                 />
               </div>
             )}
+            {/* based sa wireframe nyo tatlo ang placeholder sang choose your meat */}
+            {/* so e-relate ta si next image sa predecessor niya */}
+            {/* pork -> shrimp -> chicken */}
+            {/* given the holder = pork, si shrimp is visible just as before ni pork ready na sa next rotation */}
+            {/* initially gagamit ko absolute value as supplement sa muni case pero feel lang magamit sang prefer mo na methods*/}
+            {/* e. g. nag add ko kay gourmet sa dalom, as first condition
+            if (selectedAddOns === "Pork") add this css properties ("w-[20rem] absolute -bottom-1/2 -translate-y-1/2") */}
             {current === 2 && (
               <div>
                 <img
@@ -317,6 +329,8 @@ const KantonizePage = () => {
                   src="/assets/kantonize/meat/MEAT_PLATE_shrimp.png"
                   alt="meat_image"
                   className={`transition-all duration-500 ease-in-out ${
+                    selectedAddOns === "Pork"
+                      ? "w-[20rem] absolute -bottom-1/2 -translate-y-1/2" :
                     selectedAddOns === "Shrimp"
                       ? "w-[50rem] absolute top-1/2 -translate-y-1/2"
                       : selectedAddOns === "Chicken"
@@ -335,6 +349,7 @@ const KantonizePage = () => {
                 />
               </div>
             )}
+            {/* follow lang and guide sa current === 2, asta sa current === 5, hehe */}
             {current === 3 && (
               <div>
                 <img
