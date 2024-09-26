@@ -1,5 +1,4 @@
 "use client";
-import React, { FC } from "react";
 import Image from "next/image";
 import Carousel from "@/components/Carousel";
 import ProductCard from "@/components/ProductCard";
