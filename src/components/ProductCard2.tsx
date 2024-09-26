@@ -4,7 +4,7 @@ interface ProductCardProps {
   price: string;
 }
 
-const ProductCard = ({ name, price }: ProductCardProps) => {
+const ProductCard2 = ({ name, price }: ProductCardProps) => {
   return (
     <motion.div
       className="bg-[#912828]  p-4 relative shadow-md w-[15rem]"
@@ -13,15 +13,15 @@ const ProductCard = ({ name, price }: ProductCardProps) => {
     >
       <div className="w-10 h-20 rounded-lg mb-4">
         <img
-          src="/assets/pancit-canton-2.png"
+          src="/assets/main-asset.png"
           alt="Person 1"
-          className="absolute -top-32 w-[200px] h-[250px] z-10"
+          className="absolute -top-28 w-[200px] h-[200px] z-10"
         />
       </div>
 
       <div className="flex flex-col items-start justify-between">
         <div>
-          <div className="border-t-2 border-[#FFCECE] my-4 w-48"></div>
+          <div className="border-t-2 border-[#FFCECE] my-4 w-[100%]"></div>
           <h2 className="text-white text-md font-semibold">{name}</h2>
           <p className="text-white text-sm mt-1">₱ {price}</p>
         </div>
@@ -59,7 +59,7 @@ const ProductCard = ({ name, price }: ProductCardProps) => {
 export default function ProductList() {
   return (
     <div>
-      <ProductCard name="Kantong Puti" price="190.00" />
+      <ProductCard2 name="Pancit Canton Espesyal" price="80.00" />
     </div>
   );
 }
