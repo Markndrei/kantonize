@@ -6,7 +6,6 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
-import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
 
 // Dynamically load the LeafletMap component
