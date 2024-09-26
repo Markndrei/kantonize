@@ -1,10 +1,7 @@
-// components/LeafletMap.js
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import L from 'leaflet';
 import { useEffect } from 'react';
 
-// Fix default Leaflet marker icon issue in Next.js
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png',
@@ -12,23 +9,32 @@ L.Icon.Default.mergeOptions({
   shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
 });
 
-const position = [10.713759575609025, 122.56202068996745];
-
 const LeafletMap = () => {
   useEffect(() => {
+    return () => {
+      const container = L.DomUtil.get('map');
+      if (container != null) {
+        container._leaflet_id = null;
+      }
+    };
   }, []);
 
   return (
-    <MapContainer center={position} zoom={13} style={{ height: '400px', width: '100%' }}>
+    <MapContainer
+      id="map"
+      center={[10.713845400205717, 122.56255674358611]}
+      zoom={13}
+      style={{ height: '400px', width: '100%' }}
+    >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
-      <Marker position={position}>
-        <Popup>Your Location</Popup>
+      <Marker position={[10.713845400205717, 122.56255674358611]}>
+        <Popup>Iloilo City</Popup>
       </Marker>
     </MapContainer>
   );
-}
+};
 
 export default LeafletMap;
