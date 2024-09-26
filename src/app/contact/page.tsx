@@ -1,10 +1,13 @@
 "use client";
+import { useState } from "react"; // Import useState
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
+import { Toaster } from "@/components/ui/sonner";
+import { toast } from "sonner";
 
 // Dynamically load the LeafletMap component
 const LeafletMap = dynamic(() => import("../../components/LeafletMap"), {
@@ -28,6 +31,23 @@ const fadeInRight = {
 };
 
 export default function ContactUsPage() {
+  // State variables for form inputs
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  // Handler function to clear the form
+  const handleSubmit = (e: { preventDefault: () => void }) => {
+    e.preventDefault(); // Prevent default form submission
+
+    // Clear the input fields
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setMessage("");
+  };
+
   return (
     <motion.div
       initial="initial"
@@ -71,74 +91,90 @@ export default function ContactUsPage() {
         </h1>
       </motion.div>
 
-      {/* Form and Map Section */}
       <div className="flex flex-col md:flex-row gap-20 my-28 px-10 md:px-20">
-        {/* Contact Form */}
         <motion.div
           className="flex flex-col w-full md:w-[60%]"
           variants={fadeInLeft}
           transition={{ duration: 1 }}
         >
-          <div className="flex flex-col md:flex-row gap-4 mb-8">
-            <div className="w-full max-w-sm">
-              <Label htmlFor="fName" className="font-bold">
-                FIRST NAME
+          <form onSubmit={handleSubmit}>
+            {" "}
+            <div className="flex flex-col md:flex-row gap-4 mb-8">
+              <div className="w-full max-w-sm">
+                <Label htmlFor="fName" className="font-bold">
+                  FIRST NAME
+                </Label>
+                <Input
+                  type="text"
+                  id="fName"
+                  placeholder="First Name"
+                  aria-label="First Name"
+                  className="shadow-inner"
+                  value={firstName} // Set value from state
+                  onChange={(e) => setFirstName(e.target.value)} // Update state on change
+                />
+              </div>
+              <div className="w-full max-w-sm">
+                <Label htmlFor="lName" className="font-bold">
+                  LAST NAME
+                </Label>
+                <Input
+                  type="text"
+                  id="lName"
+                  placeholder="Last Name"
+                  aria-label="Last Name"
+                  className="shadow-inner"
+                  value={lastName} // Set value from state
+                  onChange={(e) => setLastName(e.target.value)} // Update state on change
+                />
+              </div>
+            </div>
+            <div className="w-full max-w-sm mb-8">
+              <Label htmlFor="email" className="font-bold">
+                EMAIL ADDRESS
               </Label>
               <Input
-                type="text"
-                id="fName"
-                placeholder="First Name"
-                aria-label="First Name"
+                type="email"
+                id="email"
+                placeholder="Email Address"
+                aria-label="Email Address"
                 className="shadow-inner"
+                value={email} // Set value from state
+                onChange={(e) => setEmail(e.target.value)} // Update state on change
               />
             </div>
-            <div className="w-full max-w-sm">
-              <Label htmlFor="lName" className="font-bold">
-                LAST NAME
+            <div className="w-full mb-4">
+              <Label htmlFor="message" className="font-bold">
+                YOUR MESSAGE
               </Label>
-              <Input
-                type="text"
-                id="lName"
-                placeholder="Last Name"
-                aria-label="Last Name"
-                className="shadow-inner"
+              <Textarea
+                id="message"
+                placeholder="Type your message here."
+                aria-label="Your Message"
+                className="h-16 shadow-inner"
+                value={message} // Set value from state
+                onChange={(e) => setMessage(e.target.value)} // Update state on change
               />
             </div>
-          </div>
-
-          <div className="w-full max-w-sm mb-8">
-            <Label htmlFor="email" className="font-bold">
-              EMAIL ADDRESS
-            </Label>
-            <Input
-              type="email"
-              id="email"
-              placeholder="Email Address"
-              aria-label="Email Address"
-              className="shadow-inner"
-            />
-          </div>
-
-          <div className="w-full mb-4">
-            <Label htmlFor="message" className="font-bold">
-              YOUR MESSAGE
-            </Label>
-            <Textarea
-              id="message"
-              placeholder="Type your message here."
-              aria-label="Your Message"
-              className="h-16 shadow-inner"
-            />
-          </div>
-
-          <div>
-            <Button
-              type="submit"
-              className="w-full font-bold tracking-widest bg-[#912828] border-black"
-            >
-              SEND MESSAGE
-            </Button>
-          </div>
+            <div>
+              <Button
+                type="submit" // Change to submit
+                className="w-full font-bold tracking-widest bg-[#912828] border-black"
+                onClick={() =>
+                  toast("Message Sent", {
+                    description:
+                      "We will send you an update regarding this. Thanks.",
+                    action: {
+                      label: "Noted",
+                      onClick: () => console.log("Noted"),
+                    },
+                  })
+                }
+              >
+                SEND MESSAGE
+              </Button>
+            </div>
+          </form>
         </motion.div>
 
         {/* Leaflet Map and Address */}
