@@ -5,6 +5,7 @@ import ProductCard from "@/components/ProductCard";
 import ProductCard2 from "@/components/ProductCard2";
 import SpecialProduct from "@/components/SpecialProduct";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Home: React.FC = () => {
   const items = [
@@ -69,15 +70,17 @@ const Home: React.FC = () => {
               >
                 HERE AT KANTONIZE, FIND THE MIX THAT MAKES YOU HAPPY
               </motion.h1>
-              <motion.button
-                className="bg-[#912828] hover:bg-[#470F0F] text-white font-semibold py-2 px-4 rounded"
-                style={{ borderRadius: "1rem 0rem 1rem 0rem" }}
-                initial={{ opacity: 0, x: -50 }} // Start with a slide side effect
-                whileInView={{ opacity: 1, x: 0 }} // Move to original position
-                transition={{ duration: 1, delay: 1.1 }} // Slight delay
-              >
-                KANTONIZE NOW -&gt;
-              </motion.button>
+              <Link href="/kantonize">
+                <motion.button
+                  className="bg-[#912828] hover:bg-[#470F0F] text-white font-semibold py-2 px-4 rounded"
+                  style={{ borderRadius: "1rem 0rem 1rem 0rem" }}
+                  initial={{ opacity: 0, x: -50 }} // Start with a slide side effect
+                  whileInView={{ opacity: 1, x: 0 }} // Move to original position
+                  transition={{ duration: 1, delay: 1.1 }} // Slight delay
+                >
+                  KANTONIZE NOW -&gt;
+                </motion.button>
+              </Link>
               <motion.div
                 className="py-16 px-20"
                 initial={{ opacity: 0, y: 40 }} // Start with a slide down effect
@@ -297,12 +300,14 @@ const Home: React.FC = () => {
             Don&apos;t be surprised at how satisfied your tummy is once you
             kantonize.
           </h2>
-          <motion.button
-            className="bg-[#FFCECE] hover:bg-gray-100 text-[#470F0F] font-bold py-[0.5rem] text-[20px] px-[5rem] rounded-3xl mt-4 tracking-wider"
-            whileHover={{ scale: 1.1 }}
-          >
-            Kantonize Now
-          </motion.button>
+          <Link href="/kantonize">
+            <motion.button
+              className="bg-[#FFCECE] hover:bg-gray-100 text-[#470F0F] font-bold py-[0.5rem] text-[20px] px-[5rem] rounded-3xl mt-4 tracking-wider"
+              whileHover={{ scale: 1.1 }}
+            >
+              Kantonize Now
+            </motion.button>
+          </Link>
         </motion.section>
       </main>
     </div>
