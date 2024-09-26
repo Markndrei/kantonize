@@ -3,43 +3,82 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
+
+// Dynamically load the LeafletMap component
 const LeafletMap = dynamic(() => import("../../components/LeafletMap"), {
   ssr: false,
 });
 
+// Motion variants for animations
+const fadeInUp = {
+  initial: { opacity: 0, y: 30 },
+  animate: { opacity: 1, y: 0 },
+};
+
+const fadeInLeft = {
+  initial: { opacity: 0, x: 30 },
+  animate: { opacity: 1, x: 0 },
+};
+
+const fadeInRight = {
+  initial: { opacity: 0, x: -30 },
+  animate: { opacity: 1, x: 0 },
+};
+
 export default function ContactUsPage() {
   return (
-    <div>
-      <div
-        style={{
-          backgroundImage: `url('/assets/contactTopBg.png')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          height: "30rem",
-          width: "100%",
-          filter: "#912828",
-          color: "white",
-        }}
+    <motion.div
+      initial="initial"
+      animate="animate"
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      {/* Header Section with Background */}
+      <motion.div
+        className="bg-cover bg-center h-[30rem] text-white"
+        style={{ backgroundImage: "url('/assets/contactTopBg.png')" }}
+        variants={fadeInUp}
+        transition={{ duration: 1.5 }}
       >
         <div className="mx-16 pt-[10%] tracking-[0.3rem] text-center">
-          <h1 className="text-[4rem] font-extrabold text-center">
+          <motion.h1
+            className="text-[4rem] font-extrabold"
+            variants={fadeInUp}
+            transition={{ duration: 1.5, delay: 0.7 }}
+          >
             HOW CAN WE HELP YOU?
-          </h1>
-          <h2 className="ml-[3rem] tracking-wider text-[24px]">
-            send us a message.
-          </h2>
+          </motion.h1>
+          <motion.h2
+            className="tracking-wider text-[24px] mt-4"
+            variants={fadeInUp}
+            transition={{ duration: 1.5, delay: 0.9 }}
+          >
+            Send us a message.
+          </motion.h2>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="text-center my-12">
-        <h1 className="text-6xl font-extrabold tracking-[0.5rem]">
+      {/* Title Section */}
+      <motion.div
+        className="text-center mt-12 mb-20"
+        variants={fadeInUp}
+        transition={{ duration: 1 }}
+      >
+        <h1 className="text-6xl font-extrabold tracking-[0.5rem] pb-12">
           LET&apos;S HAVE A TALK
         </h1>
-      </div>
+      </motion.div>
 
-      <div className="flex flex-col md:flex-row gap-20 h-auto relative my-28 ">
-        <div className="flex flex-col w-full md:w-[60%] px-20">
+      {/* Form and Map Section */}
+      <div className="flex flex-col md:flex-row gap-20 my-28 px-10 md:px-20">
+        {/* Contact Form */}
+        <motion.div
+          className="flex flex-col w-full md:w-[60%]"
+          variants={fadeInLeft}
+          transition={{ duration: 1 }}
+        >
           <div className="flex flex-col md:flex-row gap-4 mb-8">
             <div className="w-full max-w-sm">
               <Label htmlFor="fName" className="font-bold">
@@ -49,7 +88,8 @@ export default function ContactUsPage() {
                 type="text"
                 id="fName"
                 placeholder="First Name"
-                style={{ boxShadow: "inset 0 4px 6px rgba(0, 0, 0, 0.1)" }}
+                aria-label="First Name"
+                className="shadow-inner"
               />
             </div>
             <div className="w-full max-w-sm">
@@ -60,10 +100,12 @@ export default function ContactUsPage() {
                 type="text"
                 id="lName"
                 placeholder="Last Name"
-                style={{ boxShadow: "inset 0 4px 6px rgba(0, 0, 0, 0.1)" }}
+                aria-label="Last Name"
+                className="shadow-inner"
               />
             </div>
           </div>
+
           <div className="w-full max-w-sm mb-8">
             <Label htmlFor="email" className="font-bold">
               EMAIL ADDRESS
@@ -72,41 +114,50 @@ export default function ContactUsPage() {
               type="email"
               id="email"
               placeholder="Email Address"
-              style={{ boxShadow: "inset 0 4px 6px rgba(0, 0, 0, 0.1)" }}
+              aria-label="Email Address"
+              className="shadow-inner"
             />
           </div>
+
           <div className="w-full mb-4">
             <Label htmlFor="message" className="font-bold">
               YOUR MESSAGE
             </Label>
             <Textarea
-              placeholder="Type your message here."
               id="message"
-              className="h-16"
-              style={{ boxShadow: "inset 0 4px 6px rgba(0, 0, 0, 0.1)" }}
+              placeholder="Type your message here."
+              aria-label="Your Message"
+              className="h-16 shadow-inner"
             />
           </div>
+
           <div>
             <Button
               type="submit"
-              className="w-full mb-4 font-bold tracking-widest bg-[#912828] border-black"
+              className="w-full font-bold tracking-widest bg-[#912828] border-black"
             >
               SEND MESSAGE
             </Button>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="flex flex-col relative w-full md:w-[40%] pr-20">
+        {/* Leaflet Map and Address */}
+        <motion.div
+          className="flex flex-col w-full md:w-[40%]"
+          variants={fadeInRight}
+          transition={{ duration: 1 }}
+        >
           <LeafletMap />
-          <div className="py-2">
-            <p className="text-[18px] font-semibold">Luna St, La Paz</p>
-            <p>Iloilo City, Philippines</p>
-            <p>5000</p>
-            <p>+63 123 456 7890</p>
-            <p>kantonize@gmail.com</p>
+          <div className="py-6">
+            <motion.p className="text-lg font-semibold">
+              Luna St, La Paz
+            </motion.p>
+            <motion.p>Iloilo City, Philippines, 5000</motion.p>
+            <motion.p>+63 123 456 7890</motion.p>
+            <motion.p>kantonize@gmail.com</motion.p>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 }
