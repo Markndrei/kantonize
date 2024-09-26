@@ -275,11 +275,11 @@ const KantonizePage = () => {
                     // if ang addOns variable holder = (image itself) this case (original), position sa center intial gamit ko absolute
                     selectedAddOns === "Original"
                       ? "w-[50rem] absolute top-1/2 -translate-y-1/2"
-                    // then if and holder na is = next image naman(gourmet), gin decreased ko and size to 20 rem and put it sa babaw
-                      : selectedAddOns === "Gourmet"
+                      : // then if and holder na is = next image naman(gourmet), gin decreased ko and size to 20 rem and put it sa babaw
+                      selectedAddOns === "Gourmet"
                       ? "w-[20rem] absolute -top-[10rem]"
-                    // then disappear if next image = next next image(savor blend), since this position will be taken over by gourmet
-                      : "hidden"
+                      : // then disappear if next image = next next image(savor blend), since this position will be taken over by gourmet
+                        "hidden"
                   }`}
                 />
                 {/* same applies here and sa iban */}
@@ -330,8 +330,8 @@ const KantonizePage = () => {
                   alt="meat_image"
                   className={`transition-all duration-500 ease-in-out ${
                     selectedAddOns === "Pork"
-                      ? "w-[20rem] absolute -bottom-1/2 -translate-y-1/2" :
-                    selectedAddOns === "Shrimp"
+                      ? "w-[20rem] absolute -bottom-1/2 -translate-y-1/2"
+                      : selectedAddOns === "Shrimp"
                       ? "w-[50rem] absolute top-1/2 -translate-y-1/2"
                       : selectedAddOns === "Chicken"
                       ? "w-[20rem] absolute -top-[10rem]"
@@ -541,8 +541,14 @@ const KantonizePage = () => {
           </div>
           {show && (
             <div className="animateConfirmation fixed bottom-0 border-[0.15rem] border-black h-[33rem] w-full bg-gradient-to-b from-[#FBF2F2] via-[#D2CACA] to-[#958F8F] rounded-3xl shadow-[0rem_-5rem_4rem_-0px_rgba(0,0,0,0.4)] flex justify-center">
-              <div className="h-full grid py-[4rem] text-black">
-                <div className="text-3xl font-bold">Order Confirmation</div>
+              <div className="h-full grid py-[4rem] text-black items-center text-center">
+                <div className="text-3xl font-extrabold tracking-widest">
+                  ORDER CONFIRMATION
+                </div>
+                <div className="text-[1.25rem] text-gray-700 pt-2">
+                  Your total payment is ₱120. Please confirm your order to
+                  proceed.
+                </div>
                 <div>
                   <img
                     src="/assets/kantonize/BOWL_full_gourmet.png"
@@ -550,7 +556,7 @@ const KantonizePage = () => {
                     className="w-[15rem] mx-auto"
                   />
                 </div>
-                <div className="grid gap-3">
+                <div className="grid gap-3 items-center justify-center">
                   <a
                     className="text-xl w-[20rem] py-[0.5rem] bg-[#CA4545] text-white rounded-full font-semibold cursor-pointer hover:bg-red-800"
                     style={{ boxShadow: "inset 0 5px 5px rgba(0, 0, 0, 0.8)" }}
@@ -577,13 +583,16 @@ const KantonizePage = () => {
           {show2 && (
             <div className="animateConfirmation fixed top-1/2 -translate-y-1/2 mx-auto border-[0.15rem] border-black h-[28rem] w-[75%] bg-gradient-to-b from-[#FBF2F2] via-[#D2CACA] to-[#958F8F] rounded-3xl shadow-[0rem_5rem_12rem_0rem_rgba(0,0,0,0.5)] flex justify-center pt-2">
               <div className="w-full flex flex-col justify-center gap-2">
-                <div className="font-bold text-[2.5rem]">Order Confirmed</div>
-                <div className="text-[1.5rem]">Thank you for your order!</div>
-                <div className="text-[1.5rem] py-6">
+                <div className="font-black text-[2.5rem]">ORDER CONFIRMED</div>
+                <div className="font-semibold text-[1.5rem]">
+                  Thank you for your order!
+                </div>
+                <div className="text-[1.25rem] py-4 mx-20 leading-tight">
                   Your customized pancit canton is being prepared just the way
                   you like it. You&apos;ll receive a notification once it&apos;s
                   ready for delivery or pick-up.
                 </div>
+
                 <a
                   className="text-xl w-[20rem] py-[0.5rem] bg-[#CA4545] text-white rounded-full font-semibold cursor-pointer hover:bg-red-500 mx-auto"
                   style={{ boxShadow: "inset 0 3px 3px rgba(0, 0, 0, 0.4)" }}
