@@ -3,6 +3,7 @@ import React, { FC } from "react";
 import Image from "next/image";
 import Carousel from "@/components/Carousel";
 import ProductCard from "@/components/ProductCard";
+import ProductCard2 from "@/components/ProductCard2";
 import SpecialProduct from "@/components/SpecialProduct";
 import { motion } from "framer-motion";
 
@@ -115,7 +116,7 @@ const Home: React.FC = () => {
             </div>
             <motion.div
               className="absolute"
-              style={{ top: "26rem", left: "35rem" }}
+              style={{ top: "32rem", left: "37rem" }}
               initial={{ opacity: 0, y: 50 }} // Start with a slide down effect
               whileInView={{ opacity: 1, y: 0 }} // Move to original position
               transition={{ duration: 1.5, delay: 0.7 }} // Slight delay
@@ -215,7 +216,7 @@ const Home: React.FC = () => {
               transition={{ duration: 1, delay: 0.4 }} // Slight delay
             >
               <ProductCard />
-              <ProductCard />
+              <ProductCard2 />
             </motion.div>
             <div>
               <motion.h1
