@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 interface SpecialProduct {
   name: string;
   price: string;
@@ -5,8 +6,9 @@ interface SpecialProduct {
 
 const SpecialProduct = ({ name, price }: SpecialProduct) => {
   return (
-    <div
+    <motion.div
       className="bg-[#9b3737] p-6 relative shadow-md w-[25rem]"
+      whileHover={{ scale: 1.1 }}
       style={{ borderRadius: "40px 0px 40px 0px" }}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -59,7 +61,7 @@ const SpecialProduct = ({ name, price }: SpecialProduct) => {
           </svg>
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

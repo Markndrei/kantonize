@@ -1,9 +1,10 @@
 "use client";
-import React from "react";
+import React, { FC } from "react";
 import Image from "next/image";
 import Carousel from "@/components/Carousel";
 import ProductCard from "@/components/ProductCard";
 import SpecialProduct from "@/components/SpecialProduct";
+import { motion } from "framer-motion";
 
 const Home: React.FC = () => {
   const items = [
@@ -41,30 +42,51 @@ const Home: React.FC = () => {
     },
   ];
   return (
-    <div className="container max-w-max">
+    <div className="container max-w-max overflow-x-hidden">
       <main className="mt-5">
         <div className="overflow-x-hidden">
-          <section
+          <motion.section
             className="flex flex-col md:flex-row gap-20 items-center bg-[#FFCECE] mx-8 px-20 tracking-wider overflow-hidden"
             style={{ borderRadius: "20px 120px 20px 120px" }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 2, delay: 0.3 }}
           >
-            <div className="md:w-1/2 pt-36">
-              <h2 className="text-sm font-light text-gray-800 mb-4">
+            <motion.div className="md:w-1/2 pt-36">
+              <motion.h2
+                className="text-sm font-light text-gray-800 mb-4"
+                initial={{ opacity: 0, x: -50 }} // Start with a slide side effect
+                whileInView={{ opacity: 1, x: 0 }} // Move to original position
+                transition={{ duration: 1, delay: 0.4 }} // Slight delay
+              >
                 CUSTOMIZE YOUR PANCIT CANTON
-              </h2>
-              <h1 className="text-5xl font-black text-[#470F0F] mb-4">
+              </motion.h2>
+              <motion.h1
+                className="text-5xl font-black text-[#470F0F] mb-4"
+                initial={{ opacity: 0, x: -50 }} // Start with a slide side effect
+                whileInView={{ opacity: 1, x: 0 }} // Move to original position
+                transition={{ duration: 1, delay: 0.6 }} // Slight delay
+              >
                 HERE AT KANTONIZE, FIND THE MIX THAT MAKES YOU HAPPY
-              </h1>
-              <button
+              </motion.h1>
+              <motion.button
                 className="bg-[#912828] hover:bg-[#470F0F] text-white font-semibold py-2 px-4 rounded"
                 style={{ borderRadius: "1rem 0rem 1rem 0rem" }}
+                initial={{ opacity: 0, x: -50 }} // Start with a slide side effect
+                whileInView={{ opacity: 1, x: 0 }} // Move to original position
+                transition={{ duration: 1, delay: 1.1 }} // Slight delay
               >
                 KANTONIZE NOW -&gt;
-              </button>
-              <div className="py-16 px-20">
+              </motion.button>
+              <motion.div
+                className="py-16 px-20"
+                initial={{ opacity: 0, y: 40 }} // Start with a slide down effect
+                whileInView={{ opacity: 1, y: 0 }} // Move to original position
+                transition={{ duration: 1.5, delay: 0.7 }} // Slight delay
+              >
                 <SpecialProduct />
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
             <div
               className="md:w-1/2 mt-8 md:mt-0 relative"
               style={{ transform: "translateX(10.5rem) translateY(-4.5rem)" }}
@@ -74,15 +96,30 @@ const Home: React.FC = () => {
                 style={{ top: "-15rem", left: "-12rem" }}
               ></div>
 
-              <Image
-                src="/assets/bowl_blend.png"
-                alt="Pancit Canton"
-                width={400}
-                height={400}
-                className="relative z-10"
-              />
+              <motion.div>
+                {" "}
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }} // Start with a slide down effect
+                  whileInView={{ opacity: 1, y: 0 }} // Move to original position
+                  transition={{ duration: 1, delay: 0.2 }} // Slight delay
+                >
+                  <Image
+                    src="/assets/bowl_blend.png"
+                    alt="Pancit Canton"
+                    width={400}
+                    height={400}
+                    className="relative z-10"
+                  />
+                </motion.div>
+              </motion.div>
             </div>
-            <div className="absolute" style={{ top: "32rem", left: "38rem" }}>
+            <motion.div
+              className="absolute"
+              style={{ top: "26rem", left: "35rem" }}
+              initial={{ opacity: 0, y: 50 }} // Start with a slide down effect
+              whileInView={{ opacity: 1, y: 0 }} // Move to original position
+              transition={{ duration: 1.5, delay: 0.7 }} // Slight delay
+            >
               <Image
                 src="/assets/main-line.png"
                 alt="Pancit Canton"
@@ -90,13 +127,18 @@ const Home: React.FC = () => {
                 height={400}
                 className="relative z-0"
               />{" "}
-            </div>
-          </section>
+            </motion.div>
+          </motion.section>
         </div>
 
         <section className="mt-12 mx-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-9">
-            <div className="p-4 flex items-center">
+            <motion.div
+              className="p-4 flex items-center"
+              initial={{ opacity: 0, y: 50 }} // Start with a move up effect
+              whileInView={{ opacity: 1, y: 0 }} // Move to original position
+              transition={{ duration: 1, delay: 0.2 }} // Slight delay
+            >
               <Image
                 src="/assets/kanton-icon.png"
                 alt="Customizable Kanton"
@@ -113,9 +155,14 @@ const Home: React.FC = () => {
                   personal preferences.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="p-4 flex items-center">
+            <motion.div
+              className="p-4 flex items-center"
+              initial={{ opacity: 0, y: 50 }} // Start with a move up effect
+              whileInView={{ opacity: 1, y: 0 }} // Move to original position
+              transition={{ duration: 1, delay: 0.4 }} // Slight dela
+            >
               <Image
                 src="/assets/voucher-icon.png"
                 alt="Voucher Discounts"
@@ -132,9 +179,14 @@ const Home: React.FC = () => {
                   more affordable.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="p-4 flex items-center">
+            <motion.div
+              className="p-4 flex items-center"
+              initial={{ opacity: 0, y: 50 }} // Start with a move up effect
+              whileInView={{ opacity: 1, y: 0 }} // Move to original position
+              transition={{ duration: 1, delay: 0.8 }} // Slight dela
+            >
               <Image
                 src="/assets/fresh-icon.png"
                 alt="Fresh Ingredients"
@@ -151,18 +203,35 @@ const Home: React.FC = () => {
                   for exceptional flavor and quality in every bite.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
         <section className="mt-[12rem] mx-11">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-2 gap-2"
+              initial={{ opacity: 0, y: 50 }} // Start with a move up effect
+              whileInView={{ opacity: 1, y: 0 }} // Move to original position
+              transition={{ duration: 1, delay: 0.4 }} // Slight delay
+            >
               <ProductCard />
               <ProductCard />
-            </div>
+            </motion.div>
             <div>
-              <h1 className="text-[2rem] font-extrabold">Our Special Dishes</h1>
-              <p className="text-[1rem] text-gray-600 mt-12 text-justify">
+              <motion.h1
+                className="text-[2rem] font-extrabold"
+                initial={{ opacity: 0, x: 50 }} // Start with a move up effect
+                whileInView={{ opacity: 1, x: 0 }} // Move to original position
+                transition={{ duration: 1, delay: 0.4 }} // Slight delay
+              >
+                Our Special Dishes
+              </motion.h1>
+              <motion.p
+                className="text-[1rem] text-gray-600 mt-12 text-justify"
+                initial={{ opacity: 0, x: 50 }} // Start with a move up effect
+                whileInView={{ opacity: 1, x: 0 }} // Move to original position
+                transition={{ duration: 1, delay: 0.7 }} // Slight delay
+              >
                 Our Espesyal Canton dishes offer a delicious twist on the
                 traditional Filipino stir-fried noodles. Made with fresh egg
                 noodles, a blend of savory sauces, and loaded with tender meats,
@@ -171,43 +240,70 @@ const Home: React.FC = () => {
                 and shrimp or a spicy version with chili and garlic, these
                 dishes are sure to satisfy your cravings for hearty, Filipino
                 comfort food. Perfect for any occasion, served fresh and hot!
-              </p>
+              </motion.p>
             </div>
           </div>
         </section>
         <section>
-          <div className="my-[20rem]">
+          <motion.div
+            className="my-[20rem]"
+            initial={{ scale: 0.65 }} // Start with a slide down effect
+            whileInView={{ scale: 1 }} // Move to original position
+            transition={{ duration: 1, delay: 0 }}
+          >
             <Image
               src="/assets/home-canton.png"
               width={1920}
               height={480}
               alt={""}
             />
-          </div>
+          </motion.div>
         </section>
         <section className="mt-[5rem]">
-          <p className="flex justify-start text-[1rem] font-bold tracking-wider mx-8">
+          <motion.p
+            className="flex justify-start text-[1rem] font-bold tracking-wider mx-8"
+            initial={{ opacity: 0, x: -40 }} // Start with a slide down effect
+            whileInView={{ opacity: 1, x: 0 }} // Move to original position
+            transition={{ duration: 1.5, delay: 0 }} // Slight delay
+          >
             TESTIMONIALS{" "}
-          </p>
+          </motion.p>
           <div className="flex flex-col items-center mx-4">
-            <h2 className="text-[5.5rem] font-[900] text-gray-800 mb-4 mx-6 text-center">
+            <motion.h2
+              className="text-[5.5rem] font-[900] text-gray-800 mb-4 mx-6 text-center"
+              initial={{ opacity: 0, y: 50 }} // Start with a move up effect
+              whileInView={{ opacity: 1, y: 0 }} // Move to original position
+              transition={{ duration: 1, delay: 0.7 }} // Slight delay
+            >
               WHAT DO KANTONIZERS SAY ABOUT US.
-            </h2>
-            <div>
+            </motion.h2>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }} // Start with a move up effect
+              whileInView={{ opacity: 1, y: 0 }} // Move to original position
+              transition={{ duration: 1, delay: 0.7 }} // Slight delay
+            >
               <Carousel items={items} />
-            </div>
+            </motion.div>
           </div>
         </section>
 
-        <section className="flex flex-col justify-center items-center mt-[30rem] bg-[#912828] rounded-[1.5rem] p-8 mx-10 text-center mb-[12rem]">
+        <motion.section
+          className="flex flex-col justify-center items-center mt-[30rem] bg-[#912828] rounded-[1.5rem] p-8 mx-10 text-center mb-[12rem]"
+          initial={{ scale: 0.6 }} // Start with a move up effect
+          whileInView={{ scale: 1 }} // Move to original position
+          transition={{ duration: 1, delay: 0.3 }} // Slight delay
+        >
           <h2 className="text-[64px] font-[500] text-[#FFCECE] mb-4 px-[10rem]">
             Don&apos;t be surprised at how satisfied your tummy is once you
             kantonize.
           </h2>
-          <button className="bg-[#FFCECE] hover:bg-gray-100 text-[#470F0F] font-bold py-[0.5rem] text-[20px] px-[5rem] rounded-3xl mt-4 tracking-wider">
+          <motion.button
+            className="bg-[#FFCECE] hover:bg-gray-100 text-[#470F0F] font-bold py-[0.5rem] text-[20px] px-[5rem] rounded-3xl mt-4 tracking-wider"
+            whileHover={{ scale: 1.1 }}
+          >
             Kantonize Now
-          </button>
-        </section>
+          </motion.button>
+        </motion.section>
       </main>
     </div>
   );

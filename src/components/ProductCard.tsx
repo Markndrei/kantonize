@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 interface ProductCardProps {
   name: string;
   price: string;
@@ -5,9 +6,10 @@ interface ProductCardProps {
 
 const ProductCard = ({ name, price }: ProductCardProps) => {
   return (
-    <div
+    <motion.div
       className="bg-[#912828]  p-4 relative shadow-md w-[15rem]"
       style={{ borderRadius: "40px 0px 40px 0px" }}
+      whileHover={{ scale: 1.1 }}
     >
       <div className="w-10 h-20 rounded-lg mb-4">
         <img
@@ -50,7 +52,7 @@ const ProductCard = ({ name, price }: ProductCardProps) => {
           </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
