@@ -4,9 +4,10 @@ import Link from "next/link"; // Import Link from next/link
 interface ProductCardProps {
   name: string;
   price: string;
+  image: string;
 }
 
-const ProductCard = ({ name, price }: ProductCardProps) => {
+const ProductCard = ({ name, price, image }: ProductCardProps) => {
   return (
     <motion.div
       className="bg-[#912828] p-4 relative shadow-md w-[15rem]"
@@ -15,8 +16,8 @@ const ProductCard = ({ name, price }: ProductCardProps) => {
     >
       <div className="w-10 h-20 rounded-lg mb-4">
         <img
-          src="/assets/pancit-canton-2.png"
-          alt="Person 1"
+          src={image}
+          alt={name}
           className="absolute -top-32 w-[200px] h-[250px] z-10"
         />
       </div>
@@ -32,7 +33,7 @@ const ProductCard = ({ name, price }: ProductCardProps) => {
           <span className="text-[#FFCECE] text-[1.5rem] tracking-widest">
             ★★★★★
           </span>
-          <Link href="/kantonize">
+          <Link href="/payment">
             <button
               className="bg-[#FFCECE] text-[#912828] p-2 px-4 shadow-slate-800 shadow-2xl absolute -right-2 -bottom-1"
               style={{ borderRadius: "0px 20px 0px 20px" }}
@@ -62,7 +63,11 @@ const ProductCard = ({ name, price }: ProductCardProps) => {
 export default function ProductList() {
   return (
     <div>
-      <ProductCard name="Kantong Puti" price="190.00" />
+      <ProductCard
+        name="Kantong Puti"
+        price="190.00"
+        image="/assets/pancit-canton-2.png"
+      />
     </div>
   );
 }
