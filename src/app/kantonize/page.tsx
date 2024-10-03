@@ -1,5 +1,6 @@
 "use client";
 import "../globals.css";
+import { motion } from "framer-motion";
 
 import { useEffect, useState } from "react";
 // import { useAuth } from "@clerk/clerk-react";
@@ -130,16 +131,43 @@ const KantonizePage = () => {
 
             {current === 0 && (
               <div className="z-10 text-6xl font-bold tracking-wide text-white flex flex-col items-start gap-6 pl-6">
-                <div>Let&apos;s</div>
-                <div>Kantonize</div>
-                <div>Your</div>
-                <div>Food!</div>
-                <div
+                <motion.div
+                  initial={{ opacity: 0, x: -50 }} // Start with a slide side effect
+                  whileInView={{ opacity: 1, x: 0 }} // Move to original position
+                  transition={{ duration: 1, delay: 1.1 }} // Slight delay
+                >
+                  Let&apos;s
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, x: -50 }} // Start with a slide side effect
+                  whileInView={{ opacity: 1, x: 0 }} // Move to original position
+                  transition={{ duration: 1, delay: 1.5 }} // Slight delay
+                >
+                  Kantonize
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, x: -50 }} // Start with a slide side effect
+                  whileInView={{ opacity: 1, x: 0 }} // Move to original position
+                  transition={{ duration: 1, delay: 2 }} // Slight delay
+                >
+                  Your
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, x: -50 }} // Start with a slide side effect
+                  whileInView={{ opacity: 1, x: 0 }} // Move to original position
+                  transition={{ duration: 1, delay: 2.5 }} // Slight delay
+                >
+                  Food!
+                </motion.div>
+                <motion.div
+                  initial={{ scale: 1, opacity: 0, x: -50 }} // growing nimation
+                  whileInView={{ opacity: 1, x: 0 }}
+                  whileHover={{ scale: 1.1 }} // // growing nimation
                   onClick={() => setCurrent((prev) => prev + 1)}
                   className="z-10 text-xl px-8 py-2 bg-red-200 text-red-900 w-fit rounded-full font-semibold cursor-pointer hover:bg-red-100 hover:text-red-950"
                 >
-                  Kantonan na! &gt;
-                </div>
+                  Kantonan na!
+                </motion.div>
               </div>
             )}
 
